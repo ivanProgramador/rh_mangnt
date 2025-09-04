@@ -1,0 +1,7 @@
+baixando o fortify
+
+composer require laravel/fortify
+
+instalando o fortify
+
+php artisan fortify:install

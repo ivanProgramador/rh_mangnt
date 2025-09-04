@@ -1,0 +1,2 @@
+Essa é uma aplicação de gestão de RH desenvolvieda com o objeivo de entender na pratica todos  
+conceitos vistos atée o momento no framework laravel.  
