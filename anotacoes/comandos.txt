@@ -5,3 +5,18 @@ composer require laravel/fortify
 instalando o fortify
 
 php artisan fortify:install
+
+criando o model user e a migration dele  
+
+php artisan make:model User --migration
+
+criando o model UserDetail e a migration dele
+
+php artisan make:model UserDetail --migration
+
+criando o model Department e a migration dele
+
+php artisan make:model Department --migration
+
+
+
