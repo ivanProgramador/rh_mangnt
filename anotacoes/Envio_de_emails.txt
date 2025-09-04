@@ -1,0 +1,50 @@
+O rh mangnt vai precisar de um sistema de envio de emial ppara validar acessoso e novos cadastros, para fazer isso 
+eu vou usar o "mailhog" é um sistema que cria uma caixa de eemial temporaria enquanto esta em execução, eu posso enviar 
+emails para ele usando o portocolo smtp.
+
+A configuração de envio de emails do sistema é feita no .env a configuração abaixo envia 
+todos os emials que partirem da minha aplicação para a caixa de emial dele  
+
+MAIL_MAILER=smtp 
+MAIL_SCHEME=null
+MAIL_HOST=127.0.0.1
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+acessando a caixa 
+
+O sistema da caixa de email fica nessa porta
+
+http://localhost:8025/
+
+Testando o envio de email quando essa rota é requisitada ela manda o mail poaraa a caixa de mensagem usando smtp
+atenção as importações 
+
+use Illuminate\Mail\Message;
+use Illuminate\Support\Facades\Mail;
+
+
+Route::get('/email', function () {
+
+    essa função chama o metodo raw da classe Mail que recebe 2 parametros 
+      1- a amensagem 
+      2 - a função anonima
+    A classe Message possui alguns atributos 
+      1 - to ('nomde do destinatario')
+      2 - subject('assunto do email')
+      3 - remetente    
+
+    Mail::raw('Mensagem de teste rh mangnt',function(Message $message){
+       $message->to('teste@gmail.com')
+       ->subject('Bem vindo ao Rh mangnt')
+       ->from('rh@rhmangnt.com');
+    });
+
+
+    echo'email enviado com sucesso';
+});
+
+
