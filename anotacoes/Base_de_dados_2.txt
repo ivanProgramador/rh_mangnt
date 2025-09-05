@@ -1,0 +1,59 @@
+As entidades iniciais criadas foram 
+-usuario 
+-departamento 
+-detalhes de usuarios  
+
+O administrador 
+ Eu fiz uma seed que cadastra o administrador porém o cadastro de um usuario dentro desse projeto,
+ se dvivide em 3 tabelas 
+
+ 1 -  User com dados relacionados a acessos e permissões     
+ 2 -  UserDetails contem dados mais espcificos endereço,salario,data de registro   
+ 3 -  department contem dados do departamento ao aqula esse usuário pertence 
+
+Todas as partes que compoem o registro de um usuario se conectam atraves do id dele as migrations 
+foram feitas porém ainda não existe, uma relação direta entre elas isso será estabelecido pelo laravel,
+atráves dos Models.
+
+Estabelecendo a relação do model user com departamento e detalhes
+
+---------------------------------------------------------------------------------
+
+class User extends Model
+  {
+     use HasFactory;
+
+    //ligando o model usuario ao model de details 
+
+    public function detail()
+    {
+       return $this->hasOne(UserDetail::class);
+    }
+    public function departiment()
+    {
+       return $this->belongsTo(Department::class);
+    }
+
+}
+--------------------------------------------------------------------------------------
+Estabelecendo uma relação de um para muitos com o departamento porque eu posso ter, varios 
+funcionarios e um unico departamento. 
+
+class Department extends Model
+{
+    public function users(){
+
+        return $this->belongsToMany(User::class);
+         
+    }
+}
+
+------------------------------------------------------------------------------------
+
+Testando se as relações funcionam 
+  
+
+
+
+
+

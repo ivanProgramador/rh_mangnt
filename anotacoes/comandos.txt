@@ -18,5 +18,14 @@ criando o model Department e a migration dele
 
 php artisan make:model Department --migration
 
+criando seed pra admiistrador
+
+ php artisan make:seed  AdminSeeder
+
+usando o seed parara gravar um admiistrador 
+
+ php artisan db:seed --class=AdminSeeder
+ 
+
 
 
