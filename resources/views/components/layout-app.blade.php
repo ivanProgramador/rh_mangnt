@@ -8,7 +8,9 @@
     <!-- favicon -->
     <link rel="icon" href="{{ asset('assets/images/favicon.png" type="image/png') }}">
     <!-- resources -->
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}">  
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css')   }}">  
+    <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.min.css')   }}">
+    <link rel="stylesheet" href="{{ asset('assets/datatables/datatables.min.css') }}"> 
     <!-- custom -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}"> 
 </head>
@@ -20,7 +22,10 @@
 
     
     <!-- resources -->
+    <script src="assets/datatables/jquery.min.js"></script>
     <script src="{{ asset('assets/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="assets/datatables/datatables.min.js"></script>
+
     
 
 </body>

@@ -51,6 +51,21 @@ class Department extends Model
 ------------------------------------------------------------------------------------
 
 Testando se as relações funcionam 
+ Depois que eu estabeleci as relações dentro dos models eu fiz uma rota fazendo a seleção dos dados 
+ desse usuario nas 3 tabelas quando eu chamo o model user ele sabe qua quero trazer os usuarios, quando 
+ eu acionao a função with eu infmo nos paramtros dela queis tabelas eu quero trazer junto com esse usuario
+ mas isso so funciona por conta da relação que foi estabelecida.
+
+ O retorno sem formatação será uma array com todos os dados   
+
+
+Route::get('/admin',function(){
+
+   $admin = User::with('detail','department')->find(1);
+   return view('admin',['admin'=>$admin]);
+
+});
+
   
 
 

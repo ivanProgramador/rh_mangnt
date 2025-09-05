@@ -25,6 +25,9 @@ criando seed pra admiistrador
 usando o seed parara gravar um admiistrador 
 
  php artisan db:seed --class=AdminSeeder
+
+php artisan make:component LayoutApp
+
  
 
 
