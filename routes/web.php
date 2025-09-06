@@ -8,8 +8,10 @@ use App\Models\User;
 
 
 
-Route::view('/login', function () {
-    return view('auth.login');
+Route::middleware('auth')->group(function(){
+
+    Route::view('/home','home');
 });
+
 
 

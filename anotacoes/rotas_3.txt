@@ -1,0 +1,30 @@
+Em relação as rotas eu vou precisar estabelecer 2 grupos 
+
+um grupo só deve ser acessivel a pessoas que ja fizeram autenticação
+outro grupo seria parar usuarios externo que ainda não estão cadastrados 
+no sistema no caso como eu estou usanod o fortify eu preciso infomar a ele
+qual é a minha login view, parara fazer isso eu tenho que acessar o arquivo 
+
+FortifyServiceProvider.php 
+
+esse arquivo tem a função de boot "inicio" do fortify 
+é dentro dela que eu tenho que estabelecer a minha login view
+
+//login view 
+
+Fortify::loginView(function(){
+         return view('auth.login');
+});
+
+
+ATENÇÃO!
+  Ao acionar o login o sistema pode dar um erro referente ao cache 
+  no arquivo .env tem parametro 'CACHE_STORE=database' como ele esta 
+  apontando para base de dados ele vai buscar pela tabela e não vai achar
+  por isso ele dá erro, pra reolver tem que alterar para "CACHE_STORE=file"
+
+  
+
+
+
+
