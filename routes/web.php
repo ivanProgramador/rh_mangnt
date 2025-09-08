@@ -10,7 +10,10 @@ use App\Models\User;
 
 Route::middleware('auth')->group(function(){
 
-    Route::view('/home','home');
+    Route::redirect('/','home');
+
+    Route::view('/home','home')->name('home');
+
 });
 
 

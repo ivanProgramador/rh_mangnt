@@ -28,7 +28,9 @@ usando o seed parara gravar um admiistrador
 
 php artisan make:component LayoutApp
 
- 
+criando a barra do usuario somenet a componete de view 
+
+php artisan make:component UserBar --view
 
 
 
