@@ -1,0 +1,10 @@
+Como todo o sistema tradicional  cliente vê uma tela de login 
+1 - se os login esta normal ele entra para pagina pricipal
+2 - se ele esqueceu a senha ele deve cliucar em esqueci a senha 
+    1 - sistema manda uma email com uma link parara pagina de  
+        recuperação de senha  
+    2 - cliente entra no link digita o usuario , preenche os campos 
+        senha e confirmação de senha
+
+quando ele faz isso ele volta aparar tela de login com uma mensagem avisando 
+que a alteração deu certo. entaão o usuario pode entrar com a senha nova 

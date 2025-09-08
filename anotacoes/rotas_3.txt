@@ -23,6 +23,39 @@ ATENÇÃO!
   apontando para base de dados ele vai buscar pela tabela e não vai achar
   por isso ele dá erro, pra reolver tem que alterar para "CACHE_STORE=file"
 
+
+Para que se possa usar o fortify para autenticação ele tem um grupo de rotas 
+ela não vai aparecer no web.php, para poder ver essas rotas tem que usar o comando 
+abaixo   
+
+php artisan route:list
+
+
+sistema de views fortify , todas as veiews que form ligadass aos processos dele 
+deven ser declaradas aqui no "FortifyServiceProvider.php" ou caso contario elas não 
+vão funcionar  
+
+
+
+
+ //login view 
+
+        Fortify::loginView(function(){
+            return view('auth.login');
+        });
+
+        //view de recuperar senha 
+        
+        Fortify::requestPasswordResetLinkView(function(){
+             return view('auth.forgot-password');
+            
+        });
+
+        //reset password view 
+        Fortify::resetPasswordView(function($request){
+            return View('auth.reset-password',['token'=>$request->route('token')]);
+        });
+
   
 
 

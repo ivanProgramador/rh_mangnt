@@ -32,5 +32,9 @@ criando a barra do usuario somenet a componete de view
 
 php artisan make:component UserBar --view
 
+adicionando a coluna "remember_token" 
+
+  php artisan make:migration add_remember_token_to_users_table
+
 
 
