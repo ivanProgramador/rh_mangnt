@@ -1,0 +1,36 @@
+
+O sistema possui 3 tipos de usuários e cada um deles possui suas permissões,
+então o menu será condicionado. 
+
+O componente side bar é uma lista de links dentro de uma view 
+cada link possui uma classe visual padrão para se comportar como uma lista 
+
+
+ <div class="d-flex flex-column sidebar pt-4">
+
+    <a href="#" class=""><i class="fas fa-chevron-right me-3"></i>Menu Item</a>
+    <a href="#" class=""><i class="fas fa-chevron-right me-3"></i>Menu Item</a>
+    <a href="#" class=""><i class="fas fa-chevron-right me-3"></i>Menu Item</a>
+    <hr>
+    <a href="#" class=""><i class="fas fa-chevron-right me-3"></i>Menu Item</a>
+</div>
+
+Mostrando o componente na view na view wu tenho o user-bar qua faz uma barra horizontal 
+aparacer na tela então embaixo dela foi criada uma div com uma classe flexivel.  
+isso vai fazer com que ela aumente de tamanho se precisar.
+dentro dela eu coloquei a side-bar e fiz uma outra div pra carregar o slot com as  
+classes e recursos.
+
+
+
+
+
+  <x-user-bar />
+    <div class="d-flex pt-2">
+        <x-side-bar/>
+        <div class="m-2 p-2">
+              {{ $slot }}
+        </div>
+  </div>
+
+ 

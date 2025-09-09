@@ -1,0 +1,8 @@
+As gates vão controllar os acessos do usuarios a recursos do sistema com base na hierarquia,
+as gates devem ser declaradas dentro do arquivo "AppServiceProvider.php" dentro da função boot 
+
+ public function boot(): void
+    {
+        //
+    }
+

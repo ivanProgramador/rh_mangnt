@@ -17,10 +17,15 @@
 
 <body>
     <x-user-bar />
+    <div class="d-flex pt-2">
+        <x-side-bar/>
+        <div class="m-2 p-2">
+              {{ $slot }}
+        </div>
+    </div>
 
    
-    {{ $slot }}
-
+   
     
     <!-- resources -->
     <script src="{{ asset('assets/datables/jquery.min.js') }}"></script>
