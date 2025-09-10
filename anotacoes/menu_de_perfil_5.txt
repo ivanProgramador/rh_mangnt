@@ -1,0 +1,21 @@
+Trata-se de um view onde o usuario vai poder ver os seus próprios dados 
+primeiro eu criei a view que mostra os dados do usuario logado ela se chama
+"profile.blade.php" ela ´pe um aruivo separado mas eu vou ter qua ssoicar ela
+no menu.
+
+Para que esa view seja acessada deve existir uma rota feita pra ela, a rota 
+deve estar no grupo 'auth' que exige que o usuario esteja logado para ter acesso 
+a ela  ou então eu vou estar mostrando dados que não existem. 
+
+Ao criar a minha view de perfil de usuario a ideia e mostra-la ao lado do menu 
+principal então essa view deve ser rodeada pelo componente"<x-layout-app pageTitle="Perfil do usuário">"
+porque é dentro dele que a barra lateral existe pra el poder mostrar os dois 
+
+1 - os dados de usuario 
+2 - e o menu lateral   
+
+
+
+
+
+
