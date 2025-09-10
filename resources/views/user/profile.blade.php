@@ -8,10 +8,10 @@
                 <div class="row">
                     <div class="col-5">
                         <div class="border p-5 shadow-sm">
-                            <form action="#" method="post">
+                            <form action="{{ route('user.profile.update-password') }}" method="post">
                                 @csrf
 
-                                <h3>Change password</h3>
+                                <h3>Atuazar senha </h3>
 
                                 <div class="mb-3">
                                     <label for="current_password" class="form-label">Senha atual</label>
