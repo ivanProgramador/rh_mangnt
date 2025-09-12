@@ -16,9 +16,10 @@ Route::middleware('auth')->group(function(){
     //rota para o perfil de usuario 
 
     Route::get('/user/profile',[ProfileController::class,'index'])->name('user.profile');
-
-
     Route::post('/user/profile/update_password',[ProfileController::class,'updatePassword'])->name('user.profile.update-password');
+    Route::post('/user/profile/update-user-data',[ProfileController::class,'updateUserData'])->name('user.profile.update-user-data');
+    
+
 
 
 
