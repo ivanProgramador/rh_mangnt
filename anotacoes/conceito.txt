@@ -1,2 +1,7 @@
-Essa é uma aplicação de gestão de RH desenvolvieda com o objeivo de entender na pratica todos  
-conceitos vistos atée o momento no framework laravel.  
+Essa é uma aplicação de gestão de RH desenvolvida com o objevo de entender na pratica todos  
+conceitos vistos até o momento no framework laravel. 
+
+A administração dos recursos será feita em controllers separados até aqui eu ja fiz 
+1 - controller para o perfil 
+2 - controller para os departamentos
+
