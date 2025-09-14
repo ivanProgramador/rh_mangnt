@@ -5,17 +5,20 @@
 
     <hr>
 
-    <form action="#" method="post">
+    <form action="{{ route('departments.create-department') }}" method="post">
+
+        @csrf
 
         <div class="mb-3">
             <label for="name" class="form-label">Nome do departamento</label>
             <input type="text" class="form-control" id="name" name="name" required>
             @error('name')
-                
+                <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
 
         <div class="mb-3">
+            <a href="{{ route('departments') }}" class="btn btn-outline-danger me-3" >Cancel</a>
             <button type="submit" class="btn btn-primary">Criar departamento</button>
         </div>
 
