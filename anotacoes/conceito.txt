@@ -5,3 +5,6 @@ A administração dos recursos será feita em controllers separados até aqui eu
 1 - controller para o perfil 
 2 - controller para os departamentos
 
+Regras gerais 
+- dois departamentos não podem ter o mesmo nome  
+
