@@ -15,4 +15,9 @@ class RhUserController extends Controller
 
          return view('colaborators.rh-users',compact('colaborators'));
     }
+
+    public function newColaborator(){
+         Auth::user()->can('admin')?:abort('403','Você não esta autorizado a acessar');
+         return view('colaborators.add-rh-user');
+    } 
 }

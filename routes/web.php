@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function(){
     //rota para os colaboradores
 
     Route::get('/rh-users',[RhUserController::class,'index'])->name('colaborators.rh-users');
+    Route::get('/rh-users/new-colaborator',[RhUserController::class,'newColaborator'])->name('colaborators.new-colaborator');
+
 
 
 
