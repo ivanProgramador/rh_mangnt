@@ -14,7 +14,7 @@
 
     @else 
         <div class="mb-3">
-           <a href="departments.new-department" class="btn btn-primary">Criar um novo</a>
+           <a href="{{ route('departments.new-department') }}" class="btn btn-primary">Criar um novo</a>
         </div>
 
         <table class="table w-50" id="table">
