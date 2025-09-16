@@ -1,0 +1,5 @@
+Pra adiconar um colaborador é preciso que ele esteja alocado em uma departamento 
+então no formulario de cadastro eu coloco ma lista dos deparrtmanetos disponiveis
+se por acaso o deparamento do usuario em questão não existir eu cooqquei um botão
+do lado da lista que leva pora ma menu onde o cadastro desse novo departamento pode 
+ser feito.     
