@@ -32,7 +32,7 @@
                 <td>{{ $colaborator->name }}</td>
                 <td>{{ $colaborator->email }}</td>
                @php
-                      $permissions = json_decode($colaborator->premissions, true) ?? [];
+                      $permissions = json_decode($colaborator->permissions, true) ?? [];
                @endphp
 
                       <td>{{ implode(',', $permissions) }}</td>
@@ -40,7 +40,7 @@
                 <td>
 
                     <div class="d-flex gap-3 justify-content-end">
-                        @if($department->id === 1)
+                        @if($colaborator->id === 1)
                           <i class="fa-solid fa-lock"></i>
                         @else
                           <div class="d-flex gap-3 justify-content-end">
