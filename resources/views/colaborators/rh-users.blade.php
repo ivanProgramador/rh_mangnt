@@ -31,11 +31,12 @@
             <tr>
                 <td>{{ $colaborator->name }}</td>
                 <td>{{ $colaborator->email }}</td>
-                @php 
-                   $permissions = json_decode($colaborator->premissions);
-                @endphp
+               @php
+                      $permissions = json_decode($colaborator->premissions, true) ?? [];
+               @endphp
 
-                <td>{{ implode($permissionss,',') }}</td>
+                      <td>{{ implode(',', $permissions) }}</td>
+
                 <td>
 
                     <div class="d-flex gap-3 justify-content-end">
