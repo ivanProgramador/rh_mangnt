@@ -1,76 +1,135 @@
-
-<x-layout-app page-title="Novo colaborador do RH">
+<x-layout-app page-title="New RH User">
 
     <div class="w-100 p-4">
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
+        <h3>Novo colaborator do RH</h3>
 
-                    <h3>Novo colaborador do RH</h3>
+        <hr>
 
-                    <hr>
+        <form action="{{ route('colaborators.create-colaborator') }}" method="post">
 
-                    <form action="{{ route('colaborators.create-colaborator') }}" method="post">
+            @csrf
 
-                        @csrf
+            <div class="container-fluid">
+                <div class="row gap-3">
+
+                    {{-- user --}}
+                    <div class="col border border-black p-4">
 
                         <div class="mb-3">
                             <label for="name" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
                             @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="mb-3">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
                             @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="mb-3">
-                             <div class="d-flex">
-                                 <div class="flex-grow-1 pe-3">
-                                    <label for="select_department" class="form-label">Department</label>
-                                     <select class="form-select" name="select_department" id="select_department">
-                                         @foreach($departments as $department)
-                                             <option value="{{ $department->id }}">{{ $department->name }}</option>
-                                         @endforeach
-                                     </select>
-                                      @error('select_department')
-                                           <div class="text-danger">{{ $message }}</div>
-                                      @enderror
-                                 </div>
-
-                                 <div>
-                                     <a href="{{ route('departments.new-department') }}" class="btn btn-outline-primary mt-4"><i class="fas fa-plus"></i></a>
-                                 </div>
-                             </div>
+                            <div class="d-flex">
+                                <div class="flex-grow-1 pe-3">
+                                    <label for="select_department">Departamento</label>
+                                    <select class="form-select" id="select_department" name="select_department">
+                                        @foreach ($departments as $department)
+                                            <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('select_department')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div>
+                                    <a href="{{ route('departments.new-department') }}"
+                                        class="btn btn-outline-primary mt-4"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
                         </div>
 
-                       
+                        <p class="mb-3">Perfil: <strong>Recursos humanos</strong></p>
 
+                    </div>
 
-
-
-
-
-                        <p class="mb-3">Profile: <strong>Recursos humanos</strong></p>
+                    {{-- user details --}}
+                    <div class="col border border-black p-4">
 
                         <div class="mb-3">
-                            <a href="{{ route('colaborators.rh-users') }}" class="btn btn-outline-danger me-3">Cancel</a>
-                            <button type="submit" class="btn btn-primary">Cadastrar colaborador</button>
+                            <label for="Address" class="form-label">Endereço</label>
+                            <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+                            @error('address')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
-                    </form>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="zip_code" class="form-label">Cep</label>
+                                    <input type="text" class="form-control" id="zip_code" name="zip_code" value="{{ old('zip_code') }}">
+                                    @error('zip_code')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="city" class="form-label">Cidade</label>
+                                    <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}">
+                                    @error('city')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Telefone</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}">
+                                    @error('phone')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="salary" class="form-label">Salario</label>
+                                    <input type="number" class="form-control" id="salary" name="salary" step=".01" placeholder="0,00" value="{{ old('salary') }}">
+                                    @error('salary')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="admission_date" class="form-label">Data de contratação</label>
+                                    <input type="text" class="form-control" id="admission_date" name="admission_date" placeholder="YYYY-mm-dd" value="{{ old('admission_date') }}">
+                                    @error('admission_date')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
-            </div>
-        </div>
 
+                <div class="mt-3">
+                    <a href="{{ route('colaborators.rh-users') }}" class="btn btn-outline-danger me-3">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Cadastrar colaborador</button>
+                </div>
+
+            </div>
+
+        </form>
 
     </div>
 
