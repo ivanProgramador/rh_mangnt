@@ -51,9 +51,9 @@ class DepartmentController extends Controller
 
       Auth::user()->can('admin')?:abort('403','Você não esta autorizado a acessar');
 
-      // verrificando se o id do departamento é igual a 1 
-      //o dia vai chegar como uma string então eu usei o intval para converter 
-      if(intval($id) === 1){
+      //recenebdo o is e etestando se ele pertence a um departamento bloqueado 
+
+      if($this->idDepartmentBlocked($id)){
          return redirect()->route('departments');
       }
 
@@ -73,7 +73,7 @@ class DepartmentController extends Controller
         'name'=>'required|string|min:3|max:50|unique:departments,name,'.$id
        ]);
 
-       if(intval($id) === 1){
+       if($this->idDepartmentBlocked($id)){
          return redirect()->route('departments');
        }
 
@@ -91,7 +91,7 @@ class DepartmentController extends Controller
         
         Auth::user()->can('admin')?:abort('403','Você não esta autorizado a acessar');
 
-        if(intval($id) === 1){
+        if($this->idDepartmentBlocked($id)){
          return redirect()->route('departments');
         }
 
@@ -108,7 +108,7 @@ class DepartmentController extends Controller
        
         Auth::user()->can('admin')?:abort('403','Você não esta autorizado a acessar');
 
-        if(intval($id) === 1){
+        if($this->idDepartmentBlocked($id)){
            return redirect()->route('departments');
         }
 
@@ -122,6 +122,15 @@ class DepartmentController extends Controller
 
        
          
+    }
+
+    // no codigo anterior era possivel editar o segundo deparatmento 
+    // colocando o id pela url esse metodo vai resolver essa parte 
+    // mesmo que o id venha pela url se ele fizer parte de algum dos setores bloquados 
+    // ele retorna para pagina inicial
+    
+    private function idDepartmentBlocked($id){
+       return in_array(intval($id),[1,2]);
     }
 
 
