@@ -25,3 +25,15 @@ que os 2 departamentos existem.
                         @endif
 
 </div>
+
+
+inconsistencia 2 no formulário de cadsatro de colaboradores do rh existem outros setores disponiveis então 
+eu vou bloquear para aparecer somente rh, além de remover a possibeilidade de seleção na view eu também fiz um
+codigo dentro do metodo que redireciona o usuario pra home caso ele tente mexer na view para enviar um setor 
+diferente. Porque não faz sentido cadastrar no formualrio de colaboradores do rh funcionarios de outros departamentos.
+
+
+
+
+
+
