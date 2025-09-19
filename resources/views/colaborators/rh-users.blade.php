@@ -17,12 +17,16 @@
            <a href="{{ route('colaborators.new-colaborator') }}" class="btn btn-primary">Cadastrar um novo</a>
         </div>
 
-        <table class="table w-100" id="table">
+        <table class="table" id="table">
 
         <thead class="table-dark">
             <th>Nome</th>
             <th>E-mail</th>
+            <th>Função</th>
             <th>Permissões</th>
+            <th>Data de admissão</th>
+            <th>Cidade</th>
+             <th>Ações</th>
         </thead>
         <tbody>
 
@@ -31,11 +35,20 @@
             <tr>
                 <td>{{ $colaborator->name }}</td>
                 <td>{{ $colaborator->email }}</td>
-               @php
+                <td>{{ $colaborator->role }}</td>
+
+                 @php
                       $permissions = json_decode($colaborator->permissions, true) ?? [];
-               @endphp
+                  @endphp
 
                       <td>{{ implode(',', $permissions) }}</td>
+
+                <td>{{ $colaborator->detail->admission_date }}</td>
+
+                <td>{{ $colaborator->detail->city }}</td>
+
+               
+              
 
                 <td>
 
