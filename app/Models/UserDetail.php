@@ -10,4 +10,13 @@ class UserDetail extends Model
     {
        return $this->belongsTo(User::class);
     }
+
+    protected $fillable = [
+      'address',
+      'zip_code',
+      'city',
+      'phone',
+      'salary',
+      'admission_date'
+    ];
 }
