@@ -36,7 +36,13 @@ class RhUserController extends Controller
       $request->validate([
           'name'=>'required|string|max:255',
           'email'=>'required|email|max:255|unique:users,email',
-          'select_department'=>'required|exists:departments,id'
+          'select_department'=>'required|exists:departments,id',
+          'address'=>'required|string|max:255',
+          'zip_code'=>'required|string|max:10',
+          'city'=>'required|string|max:50',
+          'phone'=>'required|string|max:20',
+          'salary'=>'required|decimal:2',
+          'admission_date'=>'required|date_format:y-m-d'
       ]);
 
       //criando o novo usuario do rh 
@@ -48,6 +54,18 @@ class RhUserController extends Controller
       $user->department_id = $request->select_department;
       $user->permissions = '["rh"]';
       $user->save();
+
+      //gravando os datelhes do usuario na tabela user_details
+
+      $user->detail()->create([
+        'address'=>$request->address,
+        'zip_code'=>$request->zip_code,
+        'city'=>$request->city,
+        'phone'=>$request->phone,
+        'salary'=>$request->salary,
+        'admission_date'=>$request->admission_date
+      ]);   
+      
 
       //retornando para a view 
 
