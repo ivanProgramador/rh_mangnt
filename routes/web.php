@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function(){
     Route::post('/user/profile/update_password',[ProfileController::class,'updatePassword'])->name('user.profile.update-password');
     Route::post('/user/profile/update-user-data',[ProfileController::class,'updateUserData'])->name('user.profile.update-user-data');
     
-    //rotas parar os departamentos 
+    //rotas para os departamentos 
 
     Route::get('/departments',[DepartmentController::class,'index'])->name('departments');
     Route::get('/departments/new-department',[DepartmentController::class,'newDepartment'])->name('departments.new-department');
@@ -36,8 +36,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/rh-users',[RhUserController::class,'index'])->name('colaborators.rh-users');
     Route::get('/rh-users/new-colaborator',[RhUserController::class,'newColaborator'])->name('colaborators.new-colaborator');
     Route::post('/rh-users/create-colaborator',[RhUserController::class,'createRhColaborator'])->name('colaborators.create-colaborator');
-
-
+    Route::get('/rh-users/edit-colaborator/{id}',[RhUserController::class,'editRhColaborator'])->name('colaborators.edit-colaborator');
+    Route::post('/rh-users/update-colaborator',[RhUserController::class,'updateRhColaborator'])->name('colaborators.update-colaborator');
+    
 
 
 

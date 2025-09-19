@@ -23,7 +23,7 @@
             <th>Nome</th>
             <th>E-mail</th>
             <th>Função</th>
-            <th>Permissões</th>
+            <th>Salário</th>
             <th>Data de admissão</th>
             <th>Cidade</th>
              <th>Ações</th>
@@ -37,11 +37,7 @@
                 <td>{{ $colaborator->email }}</td>
                 <td>{{ $colaborator->role }}</td>
 
-                 @php
-                      $permissions = json_decode($colaborator->permissions, true) ?? [];
-                  @endphp
-
-                      <td>{{ implode(',', $permissions) }}</td>
+                <td>{{ $colaborator->detail->salary }}</td>
 
                 <td>{{ $colaborator->detail->admission_date }}</td>
 
@@ -57,7 +53,7 @@
                           <i class="fa-solid fa-lock"></i>
                         @else
                           <div class="d-flex gap-3 justify-content-end">
-                            <a href="#" class="btn btn-sm btn-outline-dark"><i class="fa-regular fa-pen-to-square me-2"></i>Edit</a>
+                            <a href="{{ route('colaborators.edit-colaborator',['id'=>$colaborator->id]) }}" class="btn btn-sm btn-outline-dark"><i class="fa-regular fa-pen-to-square me-2"></i>Edit</a>
                             <a href="#" class="btn btn-sm btn-outline-dark"><i class="fa-regular fa-trash-can me-2"></i>Delete</a>
                           </div>
                         @endif
