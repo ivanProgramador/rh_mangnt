@@ -121,6 +121,29 @@ class RhUserController extends Controller
 
        
     }
+
+    public function deleteRhColaborator($id){
+      
+       Auth::user()->can('admin')?:abort('403','Você não esta autorizado a acessar');
+
+       $colaborator = User::findOrFail($id);
+
+       return view('colaborators.delete-rh-user',compact('colaborator'));
+
+
+    }
+
+    public function deleteRhColaboratorConfirm($id){
+
+       Auth::user()->can('admin')?:abort('403','Você não esta autorizado a acessar');
+
+       $colaborator = User::findOrFail($id);
+
+       $colaborator->delete();
+
+       return redirect()->route('colaborators.rh-users')->with('success','cadastro apagado com sucesso');
+
+    }
     
     
 }
