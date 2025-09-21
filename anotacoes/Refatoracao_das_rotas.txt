@@ -1,0 +1,23 @@
+Motivo 
+  Nas rotas de contorle dos colaboradores foi encontrada uma inconsistencia, que pode causar uma confusão 
+  nas requisições. Enquanto a primeira rota diz 'colaborators.rh-users'
+  
+  Route::get('/rh-users',[RhUserController::class,'index'])->name('colaborators.rh-users');
+  
+  
+ especificando que uma requisição feita pra ela traz os colaboradores do rh as outras rotas relacionadas a colaboradores 
+ do rh estão dizendo apenas 'colaborators.new-colaborator'
+
+  Route::get('/rh-users/new-colaborator',[RhUserController::class,'newColaborator'])->name('colaborators.new-colaborator');
+
+ Isso pode causar um problema visto que no sistema eu posso ter outros tipos de funcionários então é necessário refatorar 
+ as rotas vão mudar para 
+
+  Route::get('/rh-users/new-colaborator',[RhUserController::class,'newColaborator'])->name('colaborators.rh.new-colaborator');
+
+
+
+
+
+
+       
