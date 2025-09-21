@@ -7,4 +7,10 @@ Como todo o sistema tradicional  cliente vê uma tela de login
         senha e confirmação de senha
 
 quando ele faz isso ele volta aparar tela de login com uma mensagem avisando 
-que a alteração deu certo. entaão o usuario pode entrar com a senha nova 
+que a alteração deu certo. então o usuario pode entrar com a senha nova
+
+Ajustando a jornada do utilizador quando um colaborador novo for cadastrado esse cadastro
+tem que ser confirmado por ele traves de um link enviado no email.Ess link vai levar ele para   
+a pagina de criação de senha 
+  
+   

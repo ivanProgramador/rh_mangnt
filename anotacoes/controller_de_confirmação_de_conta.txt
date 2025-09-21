@@ -1,0 +1,61 @@
+Esse comando gera um aquivo dentro da pasta App/Mail 
+
+php artisan make:mail ConfirmAccountEmail
+
+Nesse arquivo tem uma classe com o nome do email que eu criei e ela  
+estende a classe Mailable que possui todos os metodos necesarios para 
+a composição de um email.
+
+O metodo content como o nome ja diz é reponsavel pelo conteudo e o conteudo 
+mostra uma view que seria a "view.name" ela não existe então e vou criar a minha 
+própria view e fazer esse metodo retornar ela.    
+
+ public function content(): Content
+    {
+        return new Content(
+            view: 'view.name',
+        );
+    }
+
+php artisan make:view mail.confirm-account-email
+
+A view criada vai conter apenas alguns paragrafos e um link que direciona 
+o usuario para dentro do controller de criação de senha 
+
+metodo envelope
+  Esse metodo é reonsavel por definir detalhes do email como assunto e destinatario
+  como o sistema vai amandar um email ele precisa ter um endereço, parar definir um
+  endereço no laravel e necesário,
+  acessar o .env e definir o endereço no parametro abaixo 
+
+  MAIL_FROM_ADDRESS="geral@mangnt.com" 
+
+  configurando o email no metodo envelope 
+
+
+  public function envelope(): Envelope
+    {
+        return new Envelope(
+            from: env('MAIL_FROM_ADDRESS'),
+            subject:env('APP_NAME'). 'Confirme sua conta ',
+        );
+    }
+
+configurando o metodo construtor 
+   No metodo construtor eu posso definir alfuma variaveis ue eu vou precisar usar 
+   por exemplo a $url que vai trazer o usuario do email dele pra dentro do sistema
+
+     public $url;
+
+     public function __construct($url)
+     {
+        $this->url = $url;
+     } 
+
+    Como se trata de um parametro publico ela fica disponivel para a view
+    então a view cndegue definir o valor dela  
+   
+
+
+
+
