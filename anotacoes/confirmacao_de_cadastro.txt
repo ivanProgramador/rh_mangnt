@@ -1,0 +1,11 @@
+Na confirmação de cadastro eu vou usar um token que vai me permitir associar o usuario a senha
+que esta sendo criada, como a atabela users ainda não tem um campo de token de confirmação eu fiz  
+uma migration pra adicionar ele.
+
+php artisan make:migration add_confirmation_token_to_users_table
+
+ Schema::table('users', function (Blueprint $table) {
+            $table->string('confirmation_token', 64)->nullable()->unique()->after('password');
+  });
+
+
