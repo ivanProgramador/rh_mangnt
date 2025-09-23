@@ -10,6 +10,17 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use Illuminate\Routing\Route as RoutingRoute;
 
+
+Route::middleware('guest')->group(function(){
+    
+    //rotas de confirmação de emial e definição de senha
+    
+    Route::get('/confirm-account/{token}',[ConfirmAccountController::class,'confirmAccount'])->name('confirm-account');
+    Route::post('/confirm-account',[ConfirmAccountController::class,'confirmAccountSubmit'])->name('confirm-account-submit');
+    
+});
+
+
 Route::middleware('auth')->group(function(){
 
     Route::redirect('/','home');
@@ -41,10 +52,6 @@ Route::middleware('auth')->group(function(){
     Route::post('/rh-users/update-colaborator',[RhUserController::class,'updateRhColaborator'])->name('colaborators.rh.update-colaborator');
     Route::get('/rh-users/delete/{id}',[RhUserController::class,'deleteRhColaborator'])->name('colaborators.rh.delete-colaborator');
     Route::get('/rh-users/delete-confirm/{id}',[RhUserController::class,'deleteRhColaboratorConfirm'])->name('colaborators.rh.delete-confirm');
-
-    //rotas de confirmação de emial e definição de senha
-    
-    Route::get('/confirm-account/{token}',[ConfirmAccountController::class,'confirmAccount'])->name('confirm-account');
 
 
 
