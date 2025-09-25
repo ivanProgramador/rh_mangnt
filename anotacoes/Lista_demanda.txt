@@ -1,0 +1,8 @@
+1 - entender porque alguns dados dos colaboradores do RH 
+    não esta aparecendo
+    Resolvido: eu estava fazendo um select na entdad User enquanto os detalhes eram da entidade Colaborator
+    
+2 - entender porque o campo email_verified_at está vazio mesmo 
+    depois que o usuario já confirmou o cadastro
+    Resolvido: eu fiz um refresh nas migrations porque o banco não tinha sido sincronizado 
+
