@@ -30,7 +30,20 @@ que os 2 departamentos existem.
 inconsistencia 2 no formulário de cadsatro de colaboradores do rh existem outros setores disponiveis então 
 eu vou bloquear para aparecer somente rh, além de remover a possibeilidade de seleção na view eu também fiz um
 codigo dentro do metodo que redireciona o usuario pra home caso ele tente mexer na view para enviar um setor 
-diferente. Porque não faz sentido cadastrar no formualrio de colaboradores do rh funcionarios de outros departamentos.
+diferente. Porque não faz sentido cadastrar no formulário de colaboradores do rh funcionarios de outros departamentos.
+
+Um usuario nao pode ser cadastrado no sistemas da empresa sem sua autorização, por isso quando um administrador do rh fizer
+o cadastro dele, esse usuario vai receber uma manil com um link que leva a apgina de cadastro de senha, para que ele possa 
+criar a apropria senha, confirmando assim que ele esta cte do seu registro como funcionário.
+
+a unica forma de testar isso em um ambiente de testes e deslogar o administrador porque esse tipo de rota esta no grupo guest
+então se houver qualquer sessão ativa  ela vai direcionar pra home.
+
+quando o ususario definir a senha o token de confirmação será elimiado e ele vai ser levado para a tela de login,
+
+
+
+
 
 
 

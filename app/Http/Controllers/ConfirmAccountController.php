@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ConfirmAccountController extends Controller
 {
     public function confirmAccount($token){
-
+        
        //confirmando s o toekn é valido 
 
        $user = User::where('confirmation_token', $token)->first();
@@ -34,7 +34,7 @@ class ConfirmAccountController extends Controller
         $user->email_verified_at = now();
         $user->save();
 
-        return redirect()->route('login');
+        return view('auth.welcome')->with('user',$user);
 
 
     }
