@@ -40,4 +40,18 @@ class ColaboratorsController extends Controller
          return view('colaborators.show-details')->with('colaborator',$colaborator);
          
     }
+
+    public function deleteColaborator($id){
+        Auth::user()->can('admin','rh')?:abort('403','Você não esta autorizado a acessar');
+
+        if(Auth::user()->id === $id){
+            return redirect()->route('home');
+         }
+
+         $colaborator = User::findOrFail($id);
+
+         return view('colaborators.delete-colaborator-confirm')->with('colaborator',$colaborator);
+
+        
+    }
 }
