@@ -2,7 +2,7 @@
 
     <div class="w-100 p-4">
 
-        <h3>Colaborator details</h3>
+        <h3>Detalhes do colaborador</h3>
 
         <hr>
 
@@ -11,10 +11,10 @@
 
                 <div class="col">
 
-                    <p>Name: <strong>{{ $colaborator->name }}</strong></p>
+                    <p>Nome: <strong>{{ $colaborator->name }}</strong></p>
                     <p>Email: <strong>{{ $colaborator->email }}</strong></p>
-                    <p>Role: <strong>{{ $colaborator->role }}</strong></p>
-                    <p>Permissions: </p>
+                    <p>Cargo: <strong>{{ $colaborator->role }}</strong></p>
+                    <p>Permissões: </p>
 
                     <!-- permissions -->
                     @php 
@@ -28,7 +28,7 @@
                     </ul>
                     <p>Department: <strong>{{ $colaborator->department->name }}</strong></p>
 
-                    <p>Active: 
+                    <p>Situação: 
                         @empty($colaborator->email_verified_at)
                              <span class="badge bg-danger">Inativo</span>
                             @else 
@@ -41,12 +41,12 @@
 
 
                 <div class="col">
-                    <p>Address: <strong>{{ $colaborator->detail->address }}</strong></p>
-                    <p>Zip code: <strong>{{ $colaborator->detail->zip_code }}</strong></p>
-                    <p>City: <strong>{{ $colaborator->detail->city }}</strong></p>
-                    <p>Phone: <strong>{{ $colaborator->detail->phone }}</strong></p>
-                    <p>Admission date: <strong>{{ $colaborator->detail->admission_date }}</strong></p>
-                    <p>Salary: <strong>{{ $colaborator->detail->salary }}</strong></p>
+                    <p>Endereço: <strong>{{ $colaborator->detail->address }}</strong></p>
+                    <p>Código postal: <strong>{{ $colaborator->detail->zip_code }}</strong></p>
+                    <p>Cidade: <strong>{{ $colaborator->detail->city }}</strong></p>
+                    <p>Telefone: <strong>{{ $colaborator->detail->phone }}</strong></p>
+                    <p>Data de admissão: <strong>{{ $colaborator->detail->admission_date }}</strong></p>
+                    <p>Salário: <strong>{{ $colaborator->detail->salary }}</strong></p>
                 </div>
             </div>
         </div>

@@ -37,6 +37,10 @@ class ColaboratorsController extends Controller
          $colaborator = User::with('detail','department')
                         ->where('id',$id)
                         ->first();
+         //evitando mostrar um erro de codigo na tela do cliente 
+            if(!$colaborator){
+                return redirect()->route('colaborators.all-colaborators');
+            }
 
          return view('colaborators.show-details')->with('colaborator',$colaborator);
          
