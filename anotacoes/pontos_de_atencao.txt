@@ -41,6 +41,11 @@ então se houver qualquer sessão ativa  ela vai direcionar pra home.
 
 quando o ususario definir a senha o token de confirmação será elimiado e ele vai ser levado para a tela de login,
 
+Remoção de registros 
+  A remoção de registros do sistema vaiu usar uma estrategia de Soft delete isso pode ajudar a evitar acidentes, 
+  então ao ives de apagar a linha do banco de dados eu vou soemnte presncehr o campo deleted_at com a data atual 
+   
+
 
 
 
