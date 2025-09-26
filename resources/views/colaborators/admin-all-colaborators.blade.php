@@ -66,8 +66,14 @@
                           <i class="fa-solid fa-lock"></i>
                         @else
                           <div class="d-flex gap-3 justify-content-end">
-                            <a href="{{ route('colaborators.details', $colaborator->id) }}" class="btn btn-sm btn-outline-dark"><i class="fas fa-eye me-2"></i>Detalhes</a>
-                            <a href="{{ route('colaborators.delete', $colaborator->id) }}" class="btn btn-sm btn-outline-dark"><i class="fa-regular fa-trash-can me-2"></i>Delete</a>
+                            
+
+                            @if(empty($colaborator->deleted_at))
+                              <a href="{{ route('colaborators.details', $colaborator->id) }}" class="btn btn-sm btn-outline-dark"><i class="fas fa-eye me-2"></i>Detalhes</a>
+                              <a href="{{ route('colaborators.delete', $colaborator->id) }}" class="btn btn-sm btn-outline-dark"><i class="fa-regular fa-trash-can me-2"></i>Delete</a>
+                            @else
+                               <a href="{{ route('colaborators.restore', $colaborator->id) }}" class="btn btn-sm btn-outline-dark"><i class="fa-solid fa-trash-arrow-up me-2"></i>Restore</a>
+                            @endif  
                           </div>
                         @endif
 

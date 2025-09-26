@@ -6,3 +6,5 @@
     depois que o usuario já confirmou o cadastro
     Resolvido: eu fiz um refresh nas migrations porque o banco não tinha sido sincronizado 
 
+3 - Somente os funcionarios do rh ou admionistradores podem restaurar funcionários apagados 
+     

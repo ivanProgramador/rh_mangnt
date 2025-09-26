@@ -15,7 +15,8 @@ class ColaboratorsController extends Controller
         //selecionando todos os colaboradores que podem ser de varios setores 
         //mas não podem ser administradores 
 
-        $colaborators = User::with('detail', 'department')
+        $colaborators = User::withTrashed()
+            ->with('detail', 'department')
             ->where('role', '<>', 'admin')
             ->get();
 
@@ -70,6 +71,18 @@ class ColaboratorsController extends Controller
          return redirect()->route('colaborators.all-colaborators');
 
 
+
+    }
+
+    public function restoreColaborator($id){
+
+       Auth::user()->can('admin')?:abort('403','Você não esta autorizado a acessar');
+
+       $colaborator = User::withTrashed()->findOrFail($id);
+
+       $colaborator->restore();
+
+       return redirect()->route('colaborators.all-colaborators');
 
     }
 }

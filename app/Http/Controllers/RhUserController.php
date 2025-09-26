@@ -16,8 +16,11 @@ class RhUserController extends Controller
          Auth::user()->can('admin')?:abort('403','Você não esta autorizado a acessar');
 
         // $colaborators = User::where('role','rh')->get();
+        //coloquei o witTrashed aqui porque porque senão o sistema so ia retornar
+        //os funcionarios sem o soft delete preechido 
 
-        $colaborators = User::with('detail')
+        $colaborators = User::withTrashed()
+                        ->with('detail')
                         ->where('role','rh')
                         ->get();
 
@@ -155,6 +158,18 @@ class RhUserController extends Controller
        $colaborator->delete();
 
        return redirect()->route('colaborators.rh-users')->with('success','cadastro apagado com sucesso');
+
+    }
+
+    public function restoreRhColaborator($id){
+
+       Auth::user()->can('admin')?:abort('403','Você não esta autorizado a acessar');
+
+       $colaborator = User::withTrashed()->where('role','rh')->findOrFail($id);
+
+       $colaborator->restore();
+
+       return redirect()->route('colaborators.rh-users')->with('success','Cadastro restaurado com sucesso');
 
     }
     
