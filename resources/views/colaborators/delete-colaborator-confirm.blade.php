@@ -12,7 +12,7 @@
             <h3 class="my-5">{{ $colaborator->name }}</h3>
             <p>{{ $colaborator->email }}</p>
             <a href="{{ route('colaborators.all-colaborators') }}" class="btn btn-secondary px-5">Não</a>
-            <a href="#" class="btn btn-danger px-5">Sim</a>
+            <a href="{{ route('colaborators.delete-confirm',['id'=>$colaborator->id]) }}" class="btn btn-danger px-5">Sim</a>
         </div>
 
     </div>
