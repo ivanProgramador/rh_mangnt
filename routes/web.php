@@ -54,6 +54,14 @@ Route::middleware('auth')->group(function(){
     Route::get('/rh-users/delete/{id}',[RhUserController::class,'deleteRhColaborator'])->name('colaborators.rh.delete-colaborator');
     Route::get('/rh-users/delete-confirm/{id}',[RhUserController::class,'deleteRhColaboratorConfirm'])->name('colaborators.rh.delete-confirm');
     Route::get('/rh-users/restore/{id}',[RhUserController::class,'restoreRhColaborator'])->name('colaborators.rh.restore');
+    
+    //rotas de gerenciamento dos colaboradores usadas pelo rh
+    Route::get('/rh-users/management/home',[RhUserController::class,'home'])->name('rh.management.home');
+    
+    
+
+
+
 
     //rotas para a administração de colaboradores
 
