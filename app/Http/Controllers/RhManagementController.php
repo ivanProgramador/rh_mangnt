@@ -6,6 +6,7 @@ use App\Models\Department;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth; // quando for mensionar o usuario da sessão user essa facade 
 use Illuminate\Http\Request;
+use function abort;
 
 class RhManagementController extends Controller
 {
@@ -37,6 +38,19 @@ class RhManagementController extends Controller
         
 
         return view('colaborators.add-colaborator', compact('departments'));
+
+    }
+
+    public function editColaborator($id){
+          Auth::user()->can('rh') ?: abort(403,'Você não está autorizado a acessar esta pagina.');
+
+          $colaborator = User::with('detail')->findOrFail($id);
+
+          $departments = Department::where('id','>',7)->get();
+
+          
+
+
 
     }
 }
