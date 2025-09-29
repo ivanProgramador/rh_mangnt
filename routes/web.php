@@ -72,6 +72,8 @@ Route::middleware('auth')->group(function(){
     
     //rotas de gerenciamento dos colaboradores usadas pelo rh
     Route::get('/rh-users/management/home',[RhManagementController::class,'home'])->name('rh.management.home');
+    Route::get('/rh-users/management/new-colaborator',[RhManagementController::class,'newColaborator'])->name('rh.management.new-colaborator');
+    
 
     
     

@@ -11,7 +11,7 @@
          @if($colaborators->count() === 0)
         <div class="text-center my-5">
            <p>Nenhum colaborador encontrado.</p>
-           <a href="#" class="btn btn-primary">Cadastrar um novo</a>
+           <a href="{{ route('rh.management.new-colaborator') }}" class="btn btn-primary">Cadastrar um novo</a>
         </div>
 
     @else 
