@@ -4,12 +4,14 @@ use App\Http\Controllers\ColaboratorsController;
 use App\Http\Controllers\ConfirmAccountController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RhManagementController;
 use App\Http\Controllers\RhUserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Support\Facades\Auth;
 
 
 Route::middleware('guest')->group(function(){
@@ -26,7 +28,20 @@ Route::middleware('auth')->group(function(){
 
     Route::redirect('/','home');
 
-    Route::view('/home','home')->name('home');
+    Route::get('/home',function(){
+
+        if(Auth::user()->role === 'admin'){
+
+            die('vai para pagina inicial do admin');
+
+        }elseif(Auth::user()->role === 'rh'){
+
+            return redirect()->route('rh.management.home');
+        }else{
+            die('vai para pagina inicial do usuario comum');
+        }
+
+    })->name('home');
 
     //rota para o perfil de usuario 
 
@@ -56,7 +71,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/rh-users/restore/{id}',[RhUserController::class,'restoreRhColaborator'])->name('colaborators.rh.restore');
     
     //rotas de gerenciamento dos colaboradores usadas pelo rh
-    Route::get('/rh-users/management/home',[RhUserController::class,'home'])->name('rh.management.home');
+    Route::get('/rh-users/management/home',[RhManagementController::class,'home'])->name('rh.management.home');
+
     
     
 
