@@ -24,14 +24,20 @@
                 <div class="row gap-3">
                             <div class="col">
                                 <div class="mb-3">
-                                     <label for="select_department">Departamento</label>
-                                    <select class="form-select" id="select_department" name="select_department">
-                                        @foreach ($departments as $department)
+
+
+                                    <label for="select_department">Departamento</label>
+
+                                      <select class="form-select" id="select_department" name="select_department">
+
+                                           @foreach ($departments as $department)
                                          
-                                            <option value="{{ $department->id }}" {{ $colaborator->$department_id == $department->id ? 'selected' : '' }}> {{ $department->name }} </option>
+                                              <option value="{{ $department->id }}" {{ $colaborator->department_id == $department->id ? 'selected' : '' }}> {{ $department->name }} </option>
                                          
-                                        @endforeach
+                                           @endforeach
                                     </select>
+
+
                                     
                                 </div>
                             </div>
