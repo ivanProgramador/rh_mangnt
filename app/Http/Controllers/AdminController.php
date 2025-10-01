@@ -11,7 +11,6 @@ class AdminController extends Controller
 
            Auth::user()->can('admin') ?: abort(403,'Você não está autorizado a acessar esta pagina.');
            
-
            return view('home');
 
     }

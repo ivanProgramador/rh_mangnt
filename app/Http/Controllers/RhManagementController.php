@@ -115,17 +115,15 @@ class RhManagementController extends Controller
 
     }
 
-    public function editColaborator($id){
+    public function editColaborator($id)
+{
+    Auth::user()->can('rh') ?: abort(403, 'Você não está autorizado a acessar');
 
-         Auth::user()->can('rh')?:abort('403','Você não esta autorizado a acessar');
+    $colaborator = User::with('detail')->findOrFail($id);
+    $departments = Department::where('id','>',7)->get();
 
-         $colaborator = User::with('detail')->findOrFail($id);
-         $departments = Department::where('id','>',7)->get();
-
-         dd($colaborator);
-
-    }
-
+   return view('colaborators.edit-colaborator',compact('colaborator','departments'));
+}
 
 
 

@@ -28,7 +28,7 @@
                                     <select class="form-select" id="select_department" name="select_department">
                                         @foreach ($departments as $department)
                                          
-                                            <option value="{{ $department_id == $department->id ? 'selected':'' }}"> {{ $department->name  }}</option>
+                                            <option value="{{ $department->id }}" {{ $colaborator->$department_id == $department->id ? 'selected' : '' }}> {{ $department->name }} </option>
                                          
                                         @endforeach
                                     </select>
