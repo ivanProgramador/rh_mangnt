@@ -2,11 +2,11 @@
 
     <div class="w-100 p-4">
 
-        <h3>Novo colaborator</h3>
+        <h3>Adicionar novo colaborator</h3>
 
         <hr>
 
-        <form action="#" method="post">
+        <form action="{{ route('rh.management.create-colaborator')}}" method="post">
 
             @csrf
 
@@ -51,7 +51,7 @@
                             </div>
                         </div>
 
-                        
+                       
 
                     </div>
 
@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <a href="{{ route('rh.management.home') }}" class="btn btn-outline-danger me-3">Cancelar</a>
+                    <a href="#" class="btn btn-outline-danger me-3">Cancelar</a>
                     <button type="submit" class="btn btn-primary">Cadastrar colaborador</button>
                 </div>
 

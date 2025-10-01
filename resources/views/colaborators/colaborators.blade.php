@@ -2,7 +2,7 @@
 
     <div class="w-100 p-4">
 
-        <h3>All colaborators</h3>
+        <h3>Todos os colaboradores</h3>
 
         <hr>
 

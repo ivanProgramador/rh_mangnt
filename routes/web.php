@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColaboratorsController;
 use App\Http\Controllers\ConfirmAccountController;
 use App\Http\Controllers\DepartmentController;
@@ -32,8 +33,8 @@ Route::middleware('auth')->group(function(){
 
         if(Auth::user()->role === 'admin'){
 
-            die('vai para pagina inicial do admin');
-
+            return redirect()->route('admin.home');
+            
         }elseif(Auth::user()->role === 'rh'){
 
             return redirect()->route('rh.management.home');
@@ -73,11 +74,8 @@ Route::middleware('auth')->group(function(){
     //rotas de gerenciamento dos colaboradores usadas pelo rh
     Route::get('/rh-users/management/home',[RhManagementController::class,'home'])->name('rh.management.home');
     Route::get('/rh-users/management/new-colaborator',[RhManagementController::class,'newColaborator'])->name('rh.management.new-colaborator');
-    
-
-    
-    
-
+    Route::post('/rh-users/management/create-colaborator',[RhManagementController::class,'createColaborator'])->name('rh.management.create-colaborator');
+    Route::post('/rh-users/management/edit-colaborator',[RhManagementController::class,'editColaborator'])->name('rh.management.edit-colaborator');
 
 
 
@@ -89,6 +87,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/colaborators/delete-confirm/{id}',[ColaboratorsController::class,'deleteColaboratorConfirm'])->name('colaborators.delete-confirm');
     Route::get('/colaborators/restore/{id}',[ColaboratorsController::class,'restoreColaborator'])->name('colaborators.restore');
     
+    //rotas do administrador
+    
+    Route::get('/admin/home',[AdminController::class,'home'])->name('admin.home');
 
 
 

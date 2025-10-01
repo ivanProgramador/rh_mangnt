@@ -1,4 +1,5 @@
-<x-layout-app page-title="Editar dados do colaborador">
+
+<x-layout-app page-title="Editar colaborador">
 
     <div class="w-100 p-4">
 
@@ -21,23 +22,19 @@
 
             <div class="container-fluid">
                 <div class="row gap-3">
-                           <div class="col">
-                              <div class="mb-3">
-                                 <label for="select_department">Departamento</label>
+                            <div class="col">
+                                <div class="mb-3">
+                                     <label for="select_department">Departamento</label>
                                     <select class="form-select" id="select_department" name="select_department">
                                         @foreach ($departments as $department)
-
-                                            <option value="{{ $department->id }}">{{ $colaborator->department_id === $department->id ? 'selected' : '' }}</option>
-
+                                         
+                                            <option value="{{ $department_id == $department->id ? 'selected':'' }}"> {{ $department->name  }}</option>
+                                         
                                         @endforeach
                                     </select>
-                                    @error('select_department')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror
-                                
-                              </div>
-                              
-                           </div>
+                                    
+                                </div>
+                            </div>
 
                             <div class="col">
                                 <div class="mb-3">
@@ -62,7 +59,7 @@
                   
                         
 
-                     
+                       
 
                     </div>
 
