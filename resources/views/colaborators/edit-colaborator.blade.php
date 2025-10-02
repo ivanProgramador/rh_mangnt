@@ -7,7 +7,7 @@
 
         <hr>
 
-        <form action="#" method="post">
+        <form action="{{ route('rh.management.update-colaborator') }}" method="post">
 
             @csrf
 
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <a href="#" class="btn btn-outline-danger me-3">Cancelar</a>
+                    <a href="{{ route('rh.management.home') }}" class="btn btn-outline-danger me-3">Cancelar</a>
                     <button type="submit" class="btn btn-primary">Atualizar dados </button>
                 </div>
 
