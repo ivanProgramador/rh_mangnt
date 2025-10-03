@@ -73,7 +73,7 @@
 
                               <a href="#" class="btn btn-sm btn-outline-dark"><i class="fa-regular fa-trash-can me-2"></i>Deletar</a>
 
-                              <a href="#" class="btn btn-sm btn-outline-dark"><i class="fas fa-eye me-2"></i>Detalhes</a>
+                              <a href="{{ route('rh.management.details',['id' => $colaborator->id]) }}" class="btn btn-sm btn-outline-dark"><i class="fas fa-eye me-2"></i>Detalhes</a>
 
                             @else
                                <a href="#" class="btn btn-sm btn-outline-dark"><i class="fa-solid fa-trash-arrow-up me-2"></i>Restaurar</a>

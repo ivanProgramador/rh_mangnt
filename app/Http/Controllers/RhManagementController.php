@@ -158,6 +158,19 @@ class RhManagementController extends Controller
 
     }
 
+    public function showDetails($id){
+        
+        Auth::user()->can('rh') ?: abort(403, 'Você não está autorizado a acessar');
+
+        $colaborator = User::with('detail','department')->findOrFail($id);
+
+        return view('colaborators.show-details',compact('colaborator'));
+
+
+
+
+    }
+
 
 
 
