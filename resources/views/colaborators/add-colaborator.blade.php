@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <a href="#" class="btn btn-outline-danger me-3">Cancelar</a>
+                    <a href="{{ route('rh.management.home') }}" class="btn btn-outline-danger me-3">Cancelar</a>
                     <button type="submit" class="btn btn-primary">Cadastrar colaborador</button>
                 </div>
 

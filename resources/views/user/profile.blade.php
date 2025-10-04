@@ -7,14 +7,23 @@
         <hr>
 
        <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6 border p-5">
+
+    <div class="row ">
+
+        <div  class="col-4 border p-2">
             <x-profile-user-change-data />
         </div>
-        <div class="col-md-6 border p-5 ">
+
+        <div class="col-4 border p-2 ">
             <x-profile-user-change-password />
-            
         </div>
+
+         <div class="col-4 border p-2 align-top">
+            <x-profile-user-change-address />
+        </div>
+        
+
+
     </div>
 </div>
          

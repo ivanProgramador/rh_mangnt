@@ -39,7 +39,8 @@ Route::middleware('auth')->group(function(){
 
             return redirect()->route('rh.management.home');
         }else{
-            die('vai para pagina inicial do usuario comum');
+            return redirect()->route('colaborator');
+            
         }
 
     })->name('home');
@@ -49,6 +50,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/user/profile',[ProfileController::class,'index'])->name('user.profile');
     Route::post('/user/profile/update_password',[ProfileController::class,'updatePassword'])->name('user.profile.update-password');
     Route::post('/user/profile/update-user-data',[ProfileController::class,'updateUserData'])->name('user.profile.update-user-data');
+    Route::post('/user/profile/update-user-address',[ProfileController::class,'updateUserAddress'])->name('user.profile.update-user-address');
     
     //rotas para os departamentos 
 
@@ -97,6 +99,11 @@ Route::middleware('auth')->group(function(){
     //rotas do administrador
     
     Route::get('/admin/home',[AdminController::class,'home'])->name('admin.home');
+
+    //rotas do colaborador 
+    Route::get('/colaborator',[ColaboratorsController::class,'home'])->name('colaborator');
+
+
 
 
 
