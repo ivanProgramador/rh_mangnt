@@ -171,6 +171,40 @@ class RhManagementController extends Controller
 
     }
 
+    public function deleteColaborator($id){
+        
+        Auth::user()->can('rh') ?: abort(403, 'Você não está autorizado a acessar');
+
+        $colaborator  = User::findOrFail($id);
+
+        return view('colaborators.delete-colaborator',compact('colaborator'));
+
+    }
+
+    public function deleteColaboratorConfirm($id){
+
+        Auth::user()->can('rh') ?: abort(403, 'Você não está autorizado a acessar');
+        
+        $colaborator = User::findOrFail($id);
+
+        $colaborator->delete();
+
+        return redirect()->route('rh.management.home');
+         
+    }
+
+    public function restoreColaborator($id){
+        
+        Auth::user()->can('rh') ?: abort(403, 'Você não está autorizado a acessar');
+
+        $colaborator = User::withTrashed()->findOrFail($id);
+
+        $colaborator->restore();
+
+        return redirect()->route('rh.management.home');
+
+    }
+
 
 
 
