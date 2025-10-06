@@ -1,10 +1,8 @@
 <x-layout-app pageTitle="Home">
      <h1>Bem vindo a pagina administrativa </h1>
-
-     @can('Admin')
-
-        <h3 class="text-center mt-5">O administrador esta logado </h3>
-         
-     @endcan
+     <hr>
+     <x-info-title-value item-title="Quantidade de funcionários" :item-value="$data['total_colaborators']" />
+     <x-info-title-value item-title="Quantidade de funcionários excluidos" :item-value="$data['total_colaborators_deleted']" />
+     <x-info-title-value item-title="Custo total de salários" :item-value="$data['total_salary']" />
 </x-layout-app>
 

@@ -36,6 +36,7 @@ class AdminController extends Controller
                                    ->sum(function($colaborator){
                                       return $colaborator->detail->salary;
                                    });
+          $data['total_salary'] = number_format($data['total_salary'],2,',','.').' R$';
 
           //contando quantos colaboradore tem em cada departamento 
           //primeiro eu faço um select em todos os usuarios cadastrados e não excluidos
