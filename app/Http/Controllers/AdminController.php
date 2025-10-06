@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function PHPSTORM_META\map;
+
 class AdminController extends Controller
 {
     public function home(){
@@ -61,6 +63,8 @@ class AdminController extends Controller
 
                                                              });
 
+                                                             
+
         //calculando o valor bruto dos salario doa funcionários por departamento
         //nesse caso eu seleciono os funconario não excluidos e incluo os detalhes 
         // depois eu faço o agrupoamnto deles pelo id do departamento 
@@ -88,7 +92,14 @@ class AdminController extends Controller
                                                         ];
                                                     });
 
-       // dd($data);
+        $data['total_salary_by_department'] = $data['total_salary_by_department']->map(function($department){
+            return[
+                'department'=>$department['department'],
+                'total'=>number_format($department['total'],2,',','.').' R$'
+            ];
+        });                                           
+
+        
 
 
         return view('home', compact('data'));

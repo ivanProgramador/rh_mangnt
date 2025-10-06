@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}">  
     <!-- custom -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}"> 
+    
 </head>
 
 <body>
@@ -21,6 +22,7 @@
     
     <!-- resources -->
     <script src="{{ asset('assets/bootstrap/bootstrap.bundle.min.js') }}"></script>
+     <script src="{{ asset('assets/js/main.js') }}"></script>
     
 
 </body>

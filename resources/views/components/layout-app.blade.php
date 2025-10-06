@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{ asset('assets/datatables/datatables.min.css') }}"> 
     <!-- custom -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}"> 
+    
+
 </head>
 
 <body>
@@ -34,6 +36,7 @@
     <script src="{{ asset('assets/datables/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/bootstrap/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/datables/datatables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     
 
