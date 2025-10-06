@@ -51,9 +51,9 @@
 
         </form>
         {{-- essa varivel de sessão tem que ser diferente da outra para que saiba qual dos dois deu certo ou errado  --}}
-         @if(session('success_change_data'))
+         @if(session('address_success'))
             <div class="alert alert-success mt-3">
-                                     {{ session('success_change_data') }}
+                                     {{ session('address_success') }}
             </div>
          @endif
     </div>

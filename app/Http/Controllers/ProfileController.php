@@ -72,11 +72,12 @@ class ProfileController extends Controller
         //Form validation 
         $request->validate([
             'address'=>'required|min:3|max:100',
-            'zip_code'=>'required|min:8|max:8',
+            'zip_code'=>'required|min:8|max:12',
             'city'=>'required|min:3|max:50',
             'phone'=>'required|min:6|max:20'
         ]);
 
+        
         //pegando os detalhes do usuario 
 
         $user = User::with('detail')->findOrFail(auth()->id());
@@ -86,7 +87,9 @@ class ProfileController extends Controller
         $user->detail->phone = $request->phone;
         $user->detail->save();
 
-        return redirect()->back()->with('success','endereço alterado com sucesso');
+        
+
+        return redirect()->back()->with('address_success','endereço alterado com sucesso');
 
 
         
