@@ -26,7 +26,7 @@
                         @endforeach
 
                     </ul>
-                    <p>Department: <strong>{{ $colaborator->department->name }}</strong></p>
+                    <p>Department: <strong>{{ $colaborator->department->name ?? "Sem departamento"}}</strong></p>
 
                     <p>Situação: 
                         @empty($colaborator->email_verified_at)

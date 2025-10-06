@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -115,6 +116,19 @@ class DepartmentController extends Controller
         $department = Department::findOrFail($id);
 
         $department->delete();
+
+        //depois de deletar o departamento eu vou fazer um update
+        //no cadstrode usuarios e colocar-los em departamento null
+        //para fazer um teste
+        
+        User::where('department_id',$id)
+              ->update(
+                [
+                  'department_id'=> null
+                ]
+              );
+
+        
 
         return redirect()->route('departments');
 

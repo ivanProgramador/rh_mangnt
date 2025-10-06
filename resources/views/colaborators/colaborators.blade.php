@@ -55,7 +55,7 @@
                 </td>
 
 
-                <td>{{ $colaborator->department->name }}</td>
+                <td>{{ $colaborator->department->name ?? "Sem departamento" }}</td>
                 <td>{{ $colaborator->role }}</td>
                 <td>{{ $colaborator->detail->admission_date }}</td>
                 <td>{{ $colaborator->detail->salary }}</td>

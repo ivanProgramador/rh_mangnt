@@ -1,0 +1,11 @@
+Um departamento pode ser removido por um admistrador  
+
+Porém existe um problema nisso , aguns de stores d empresas podem ter 200 ou ate mais funcionários
+o ponto de atenção aqui é entender oque acontece com esses cadastros.No caso desse projeto quando 
+o deparmento de um funcionário for removido, a referencia do departamento dele vai receber null 
+ai eu mantenho o cadastro dele pra associar  um outro departamento.
+
+Nesse caso uma exclusão em cascata não seria interessante , seria desastroso, porque a empresa 
+perderia o cadastro dos funcionários, oque poderia afetar relatóriose eo calculo da folha de 
+pagamento.     
+   
