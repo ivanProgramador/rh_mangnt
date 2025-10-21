@@ -36,7 +36,7 @@ class AdminController extends Controller
                                    ->with('detail')
                                    ->get()
                                    ->sum(function($colaborator){
-                                      return $colaborator->detail->salary;
+                                      return $colaborator->detail->salary ?? 0;
                                    });
           $data['total_salary'] = number_format($data['total_salary'],2,',','.').' R$';
 
@@ -86,7 +86,7 @@ class AdminController extends Controller
                                                         return [
                                                             'department'=>$department->first()->department->name ?? '-',
                                                             'total'=>$department->sum(function($colaborator){
-                                                                return $colaborator->detail->salary;
+                                                                return $colaborator->detail->salary?? 0;
 
                                                             })
                                                         ];
