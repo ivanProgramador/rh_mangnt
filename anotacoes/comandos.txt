@@ -41,5 +41,8 @@ trazendo o framework de teste para dentro do sistema
 
  composer require pestphp/pest --dev --with-all-dependencies 
 
+inicializando o PEST 
+
+   ./vendor/bin/pest --init
 
 
