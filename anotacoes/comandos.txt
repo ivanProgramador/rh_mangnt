@@ -37,4 +37,9 @@ adicionando a coluna "remember_token"
   php artisan make:migration add_remember_token_to_users_table
 
 
+trazendo o framework de teste para dentro do sistema 
+
+ composer require pestphp/pest --dev --with-all-dependencies 
+
+
 
