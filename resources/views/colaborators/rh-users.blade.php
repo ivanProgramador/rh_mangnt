@@ -37,11 +37,11 @@
                 <td>{{ $colaborator->email }}</td>
                 <td>{{ $colaborator->role }}</td>
 
-                <td>{{$colaborator->detail->salary}}</td>
+                <td>{{$colaborator->detail->salary ?? 0}}</td>
 
-                <td>{{ $colaborator->detail->admission_date }}</td>
+                <td>{{ $colaborator->detail->admission_date ?? 0 }}</td>
 
-                <td>{{ $colaborator->detail->city}}</td>
+                <td>{{ $colaborator->detail->city ?? 0}}</td>
 
                
               

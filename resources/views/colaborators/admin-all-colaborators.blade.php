@@ -58,8 +58,8 @@
 
                 <td>{{ $colaborator->department->name ?? "Sem departamento" }}</td>
                 <td>{{ $colaborator->role }}</td>
-                <td>{{ $colaborator->detail->admission_date }}</td>
-                <td>{{ $colaborator->detail->salary }}</td>
+                <td>{{ $colaborator->detail->admission_date ?? '-' }}</td>
+                <td>{{ $colaborator->detail->salary ?? '-'}}</td>
 
                 <td>
                     <div class="d-flex gap-3 justify-content-end">
