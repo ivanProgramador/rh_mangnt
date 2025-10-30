@@ -1,0 +1,5 @@
+Criar um arquivo .md qua sera interprtado como um arquivo markdown
+onde deve ser feita uma lista dos testes que seram feitos para que se tenha
+uma orientação, é necessário mapear todas as funcionalidades do sistema para que
+se tenha uma bateria de testes eficiente.   
+  
