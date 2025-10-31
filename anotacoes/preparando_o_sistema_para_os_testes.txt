@@ -1,0 +1,27 @@
+Criar um arquivo .md qua sera interprtado como um arquivo markdown
+onde deve ser feita uma lista dos testes que seram feitos para que se tenha
+uma orientação, é necessário mapear todas as funcionalidades do sistema para que
+se tenha uma bateria de testes eficiente. 
+
+Os testes são feitos em fases a fase inicial se chama "RANGE" onde as variáveis de teste
+seram estabelecidas.
+
+1 - fase RANGE(variáveis de teste estabelecidas) 
+2 - fase ACT (onde os os testes são executados de fato )
+
+Atualizando a base de dados a acada teste executado 
+  
+  Dentro do arquivo Pest.php existem varias funcções especificas para testes incluisive 
+  uma para fazer um ataualização na base por padraão ela fica comentada, mas anesse caso 
+  eu preciso ativar  ela pra usar. 
+
+  pest()->extend(Tests\TestCase::class)
+       ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
+       ->in('Feature');
+
+
+
+
+
+
+  
